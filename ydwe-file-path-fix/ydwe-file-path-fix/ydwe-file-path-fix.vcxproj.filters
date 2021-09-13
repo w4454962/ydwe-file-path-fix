@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{f69c6626-4974-49c1-bacf-3a2deadbf043}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\hook">
+      <UniqueIdentifier>{42001362-bcff-49b9-9f04-be178dfdc78d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\hook\detail">
+      <UniqueIdentifier>{69cda6df-d7f8-48f0-ba81-8571575f135b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\win">
+      <UniqueIdentifier>{9d5f007a-f79f-4f12-a7a9-f5ea2c9420e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\util">
+      <UniqueIdentifier>{8fc0aa6e-acfc-49b1-b88e-282b3fcdec8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\detours">
+      <UniqueIdentifier>{72986531-31f6-4023-9e0c-53baadfc4cea}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="base\config.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\hook\iat.h">
+      <Filter>base\hook</Filter>
+    </ClInclude>
+    <ClInclude Include="base\hook\detail\import_address_table.h">
+      <Filter>base\hook\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="base\hook\detail\replace_pointer.h">
+      <Filter>base\hook\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="base\hook\detail\memory_protect.h">
+      <Filter>base\hook\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="base\win\pe_reader.h">
+      <Filter>base\win</Filter>
+    </ClInclude>
+    <ClInclude Include="helper.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="base\util\dynarray.h">
+      <Filter>base\util</Filter>
+    </ClInclude>
+    <ClInclude Include="base\util\unicode.h">
+      <Filter>base\util</Filter>
+    </ClInclude>
+    <ClInclude Include="base\hook\fp_call.h">
+      <Filter>base\hook</Filter>
+    </ClInclude>
+    <ClInclude Include="base\util\horrible_cast.h">
+      <Filter>base\util</Filter>
+    </ClInclude>
+    <ClInclude Include="base\hook\inline.h">
+      <Filter>base\hook</Filter>
+    </ClInclude>
+    <ClInclude Include="base\detours\detours.h">
+      <Filter>base\detours</Filter>
+    </ClInclude>
+    <ClInclude Include="base\detours\detver.h">
+      <Filter>base\detours</Filter>
+    </ClInclude>
+    <ClInclude Include="storm_mpq.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="base\hook\iat.cpp">
+      <Filter>base\hook</Filter>
+    </ClCompile>
+    <ClCompile Include="base\hook\detail\import_address_table.cpp">
+      <Filter>base\hook\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="base\hook\detail\replace_pointer.cpp">
+      <Filter>base\hook\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="base\hook\detail\memory_protect.cpp">
+      <Filter>base\hook\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="base\win\pe_reader.cpp">
+      <Filter>base\win</Filter>
+    </ClCompile>
+    <ClCompile Include="helper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="base\util\unicode.cpp">
+      <Filter>base\util</Filter>
+    </ClCompile>
+    <ClCompile Include="base\hook\inline.cpp">
+      <Filter>base\hook</Filter>
+    </ClCompile>
+    <ClCompile Include="base\detours\creatwth.cpp">
+      <Filter>base\detours</Filter>
+    </ClCompile>
+    <ClCompile Include="base\detours\detours.cpp">
+      <Filter>base\detours</Filter>
+    </ClCompile>
+    <ClCompile Include="base\detours\disasm.cpp">
+      <Filter>base\detours</Filter>
+    </ClCompile>
+    <ClCompile Include="base\detours\disolx86.cpp">
+      <Filter>base\detours</Filter>
+    </ClCompile>
+    <ClCompile Include="base\detours\image.cpp">
+      <Filter>base\detours</Filter>
+    </ClCompile>
+    <ClCompile Include="base\detours\modules.cpp">
+      <Filter>base\detours</Filter>
+    </ClCompile>
+    <ClCompile Include="base\detours\uimports.cpp">
+      <Filter>base\detours</Filter>
+    </ClCompile>
+    <ClCompile Include="storm_mpq.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
