@@ -80,6 +80,7 @@ int __fastcall fake_saveAchive(void* editdata, uint32_t unknow, const char* path
 			file << str;
 			file.close();
 			mpq.AddFile((temppath / "(listfile)").string().c_str(), "(listfile)");
+			mpq.Compact();
 			mpq.Close();
 		}
 

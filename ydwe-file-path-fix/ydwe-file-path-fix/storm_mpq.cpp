@@ -162,3 +162,14 @@ int storm_mpq::RemoveFile(const char* szFileName)
 	return 1;
 }
 
+
+int storm_mpq::Compact()
+{
+	if (!m_hMpq)
+	{
+		print("删除文件失败-mpq无效");
+		return 0;
+	}
+
+	return SFileCompactArchive(m_hMpq, 0, 0);
+}

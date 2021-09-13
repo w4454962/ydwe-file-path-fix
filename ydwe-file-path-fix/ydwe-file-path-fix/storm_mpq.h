@@ -25,4 +25,5 @@ public:
 	int AddFile(const char* szFilePath, const char* szArchivePath);
 	int RemoveFile(const char* szFileName);
 
+	int Compact();
 };
