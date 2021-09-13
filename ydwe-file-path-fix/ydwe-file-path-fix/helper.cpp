@@ -21,6 +21,8 @@ uint32_t real_saveArchive;
 uint32_t real_addFile;
 
 
+bool is_enable = false;
+
 
 std::map<std::string, std::string> file_map;
 std::string temp_save_path;
@@ -38,7 +40,7 @@ std::string covert_local(std::string filename) {
 
 	auto pos = filename.find(temp_save_path);
 
-	if (pos != filename.npos) {
+	if (is_enable && pos != filename.npos) {
 		std::string local = temp_save_path + base::u2a(filename.substr(pos + temp_save_path.length()));
 		return local;
 	}
@@ -62,6 +64,8 @@ FILE* __cdecl fake_fopen(const char* filename, const char* mode) {
 }
 
 int __fastcall fake_saveAchive(void* editdata, uint32_t unknow, const char* path, uint32_t num) {
+
+	is_enable = true;
 	fs::path temppath = fs::path(path).parent_path();
 	temp_save_path = temppath.string();
 	file_map.clear();
@@ -84,9 +88,10 @@ int __fastcall fake_saveAchive(void* editdata, uint32_t unknow, const char* path
 			mpq.Close();
 		}
 
-	
+		is_enable = false;
 		return 1;
 	}
+	is_enable = false;
 
 	return 0;
 }
@@ -126,6 +131,13 @@ void Helper::attach() {
 	if (std::string::npos == name.find("worldedit")
 		&& std::string::npos == name.find("WorldEdit"))
 		return;
+
+	GetModuleFileNameA(GetModuleHandleA("ydbase.dll"), buffer, MAX_PATH);
+
+	auto path =  fs::path(buffer).parent_path().parent_path() / "compiler" / "jasshelper" / "jasshelper.exe";
+	if (fs::exists(path))
+		return;
+
 
 
 	m_attach = true;
