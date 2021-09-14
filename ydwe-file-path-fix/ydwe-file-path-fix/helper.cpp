@@ -26,7 +26,7 @@ bool is_enable = false;
 
 std::map<std::string, std::string> file_map;
 std::string temp_save_path;
-
+std::string temp_map_path;
 
 
 uintptr_t getAddress(uintptr_t addr)
@@ -38,11 +38,13 @@ uintptr_t getAddress(uintptr_t addr)
 
 std::string covert_local(std::string filename) {
 
-	auto pos = filename.find(temp_save_path);
+	if (filename != temp_map_path) {
+		auto pos = filename.find(temp_save_path);
 
-	if (is_enable && pos != filename.npos) {
-		std::string local = temp_save_path + base::u2a(filename.substr(pos + temp_save_path.length()));
-		return local;
+		if (is_enable && pos != filename.npos) {
+			std::string local = temp_save_path + base::u2a(filename.substr(pos + temp_save_path.length()));
+			return local;
+		}
 	}
 	return filename;
 }
@@ -66,7 +68,9 @@ FILE* __cdecl fake_fopen(const char* filename, const char* mode) {
 int __fastcall fake_saveAchive(void* editdata, uint32_t unknow, const char* path, uint32_t num) {
 
 	is_enable = true;
-	fs::path temppath = fs::path(path).parent_path();
+	temp_map_path = path;
+
+	fs::path temppath = fs::path(temp_map_path).parent_path();
 	temp_save_path = temppath.string();
 	file_map.clear();
 
